@@ -1,4 +1,12 @@
 terraform {
+  backend "remote" {
+    organization = "MarlonSchultz"
+
+    workspaces {
+      name = "ImageUploader"
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -9,7 +17,6 @@ terraform {
 
 provider "aws" {
   profile = "default"
-  region  = "eu-central-1"
 }
 
 resource "aws_cognito_user_pool" "userpool" {
