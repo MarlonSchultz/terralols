@@ -89,7 +89,7 @@ resource "aws_cognito_user_pool_client" "testpoolclient" {
   ]
   allowed_oauth_flows_user_pool_client = true
   allowed_oauth_flows = [
-    "code",
+    "code", "implicit"
   ]
   supported_identity_providers = ["COGNITO"]
 }
